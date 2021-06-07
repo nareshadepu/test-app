@@ -13,14 +13,14 @@ import { SelectionModel } from '@angular/cdk/collections';
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'itemId', 'productName', 'actualPrice', 'discountPrice', 'stockAvailable'];
+  displayedColumns: string[] = ['select', 'index', 'itemId', 'productName', 'actualPrice', 'discountPrice', 'stockAvailable'];
   dataSource = new MatTableDataSource<dummyData>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
   @ViewChild(MatSort) sort: MatSort | any;
 
   selection = new SelectionModel<dummyData>(true, []);
-  filterValue:string = '';
+  filterValue: string = '';
   isLoading: boolean = false;
   dataSourceCount: any;
 
@@ -36,6 +36,10 @@ export class UserTableComponent implements OnInit {
     res.subscribe((report) => (this.dataSource.data = report as dummyData[])
     );
     this.dataSourceCount = this.dataSource.data.length;
+    // this.HttpService.getUserData().subscribe((response: dummyData[]) => {
+    //   this.dataSource.data = response;
+    //   this.dataSourceCount = response.length;
+    // });
     this.isLoading = false;
   }
   applyFilter(event: Event) {

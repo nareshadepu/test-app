@@ -1,11 +1,11 @@
 table {
   width: 100%;
 }
-.mat-column-itemId, .mat-column-select  {
+.mat-column-itemId, .mat-column-select, .mat-column-index  {
   word-wrap: break-word !important;
   white-space: unset !important;
-  flex: 0 0 10% !important;
-  width: 10% !important;
+  flex: 0 0 8% !important;
+  width: 8% !important;
   overflow-wrap: break-word;
   word-wrap: break-word;
 }
