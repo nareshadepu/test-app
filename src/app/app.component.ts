@@ -12,7 +12,7 @@ export class AppComponent {
   openDialog() {
     const dialogRef = this.dialog.open(DialogBoxComponent,{
       data:{
-        title:'User Table',
+        title:'Title',
         isShowFilter:'true',
         isShowFooter:'false',
         getDataSource:'abcd'

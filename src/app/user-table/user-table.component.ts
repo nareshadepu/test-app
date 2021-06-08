@@ -13,7 +13,7 @@ import { SelectionModel } from '@angular/cdk/collections';
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'index', 'itemId', 'productName', 'actualPrice', 'discountPrice', 'stockAvailable'];
+  displayedColumns: string[] = ['select', 'itemId', 'productName', 'actualPrice', 'discountPrice', 'stockAvailable',  'index'];
   dataSource = new MatTableDataSource<dummyData>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
