@@ -13,7 +13,7 @@ import { SelectionModel } from '@angular/cdk/collections';
   styleUrls: ['./user-table.component.scss']
 })
 export class UserTableComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'itemId', 'productName', 'actualPrice', 'discountPrice', 'stockAvailable',  'index'];
+  displayedColumns: string[] = ['select', 'itemId', 'productName', 'actualPrice', 'discountPrice', 'stockAvailable', 'index'];
   dataSource = new MatTableDataSource<dummyData>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
@@ -53,8 +53,9 @@ export class UserTableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  refreshTableData() {
-    this.getData();
+  filterValueClear() {
+    this.dataSource.filter = '';
+    this.filterValue = '';
   }
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
