@@ -1,1 +1,26 @@
-<p>create-customer works!</p>
+<div class="content">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon matPrefix>person_add</mat-icon>
+              Create Customer
+            </mat-card-title>
+          </mat-card-header>
+        <mat-card-content>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" required>
+                    
+                  </mat-form-field>
+              </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button color="primary">
+            <mat-icon matPrefix>check</mat-icon>  
+            Submit</button>
+          <button mat-button >
+            <mat-icon matPrefix>clear</mat-icon>Clear</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

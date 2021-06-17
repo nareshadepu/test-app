@@ -4,7 +4,7 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RestService } from './rest.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { routes } from './app-routing.module';
+//import { routes } from './app-routing.module';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +12,7 @@ import { routes } from './app-routing.module';
 })
 export class AppComponent {
   routes = [
-    { label: 'Home', path: '/', },
+    { label: 'Home', path: 'dashboard', },
     { label: 'User Grid', path: 'user', },
     { label: 'Create Customer', path: 'create-customer', }
   ]

@@ -6,7 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { UserTableComponent } from './user-table/user-table.component';
 
 export const routes: Routes = [
-  { path: '', component: DashboardComponent,},
+  { path: 'dashboard', component: DashboardComponent, },
+  { path: 'login', component: LoginComponent },
   { path: 'user', component: UserTableComponent },
   { path: 'create-customer', component: CreateCustomerComponent }
 ];
