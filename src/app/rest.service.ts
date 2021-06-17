@@ -12,4 +12,8 @@ export class RestService {
   getUserData() {
     return this._http.get<dummyData[]>('https://raw.githubusercontent.com/nareshadepu/mock-data/main/mock-data.json');
   }
+
+  getData(data: any) {
+    return this._http.post(('https://stgcrmprd.mercator.com/webapi.wyuat/api/Global/Search'), data);
+  }
 }
