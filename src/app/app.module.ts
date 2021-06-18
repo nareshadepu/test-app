@@ -1,9 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';  
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,12 +13,9 @@ import { LoginComponent } from './login/login.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CustomerComponent } from './customer/customer.component';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
-
-// export const routes =  [
-//   { path: '', component: DashboardComponent, pathMatch: 'full',label: 'Home' },
-//   { path: 'user', component: UserTableComponent, label: 'User Grid' },
-//   { path: 'login', component: LoginComponent},  
-//  ];
+import { HeaderComponent } from './header/header.component';
+import { AuthGuard } from './auth.guard';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +26,10 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
     LoginComponent,
     ChangePasswordComponent,
     CustomerComponent,
-    CreateCustomerComponent
+    CreateCustomerComponent,
+    HeaderComponent
   ],
-  entryComponents:[DialogBoxComponent],
+  entryComponents: [DialogBoxComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -43,7 +39,7 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

@@ -1,26 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RestService } from './rest.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationStart } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 //import { routes } from './app-routing.module';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  isLoggedIn$: Observable<boolean> | any;
   routes = [
     { label: 'Home', path: 'dashboard', },
     { label: 'User Grid', path: 'user', },
     { label: 'Create Customer', path: 'create-customer', }
   ]
- // routes = routes;
+  // routes = routes;
   filterValue: string = '';
   sendSeletedValue: { searchKey: any; searchType: string; } | any;
   isSearchedValue: string = '';
-  constructor(public dialog: MatDialog, private HttpService: RestService, private router: Router,) { }
+  isShowMenu: boolean = false;
+  selectedItem = '';
+  constructor(public dialog: MatDialog, private HttpService: RestService, private router: Router, private authService: AuthService) { }
+  ngOnInit(): void {
+    this.isLoggedIn$ = this.authService.isLoggedIn;
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+
+      }
+    })
+  }
   openDialog() {
     const dialogRef = this.dialog.open(DialogBoxComponent, {
       data: {
@@ -70,6 +83,11 @@ export class AppComponent {
   }
 
   logout() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
+    this.authService.logout();
+  }
+
+  handleClick(selectedItem: { label: string; }) {
+    this.selectedItem = selectedItem.label;
   }
 }

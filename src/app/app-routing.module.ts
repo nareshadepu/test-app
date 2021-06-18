@@ -4,12 +4,14 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { UserTableComponent } from './user-table/user-table.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent, },
-  { path: 'login', component: LoginComponent },
-  { path: 'user', component: UserTableComponent },
-  { path: 'create-customer', component: CreateCustomerComponent }
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, },
+  { path: 'user', component: UserTableComponent, canActivate: [AuthGuard] },
+  { path: 'create-customer', component: CreateCustomerComponent, canActivate: [AuthGuard] }
 ];
 
 

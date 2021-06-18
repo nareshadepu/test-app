@@ -1,10 +1,9 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="isLoggedIn$ | async">
   <mat-toolbar-row>
-
     <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <a [routerLink]="[ '/dashboard']">
+    <a *ngIf="isLoggedIn$ | async" [routerLink]="['dashboard']">
       <img width="40" alt="Angular Logo"
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
     </a>
@@ -16,24 +15,22 @@
       <mat-icon>account_circle</mat-icon> Welcome Admin
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item (click)="changepw()">
         <mat-icon>manage_accounts</mat-icon>
-        <span (click)="changepw()">Change Password</span>
+        <span>Change Password</span>
       </button>
-      <button mat-menu-item>
+      <button *ngIf="isLoggedIn$ | async" mat-menu-item (click)="logout()">
         <mat-icon>power_settings_new</mat-icon>
-        <span (click)="logout()">Logout</span>
+        <span>Logout</span>
       </button>
     </mat-menu>
-
-
   </mat-toolbar-row>
-
 </mat-toolbar>
-<mat-sidenav-container id="container" fullscreen>
+<mat-sidenav-container [ngClass]="{'sidenav-container':isLoggedIn$ | async}" fullscreen>
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a *ngFor="let route of routes" mat-list-item [routerLink]="route.path" (click)="sidenav.toggle()">
+      <a (click)="handleClick(route); sidenav.toggle()" *ngFor="let route of routes" routerLinkActive="active"
+        mat-list-item [routerLink]="route.path" matLine>
         {{route.label}}</a>
     </mat-nav-list>
   </mat-sidenav>
