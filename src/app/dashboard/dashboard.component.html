@@ -1,6 +1,6 @@
-<div class="content">
-    <div class="flex-container">
-        <div class="search-container">
+<div class="container dashboard">
+    <div class="row">
+        <div class="col-8">
             <mat-form-field class="example-full-width">
                 <mat-icon matPrefix>travel_explore</mat-icon>
                 <input matInput #txtVal (keydown.enter)="applyFilter(txtVal.value)" [(ngModel)]="filterValue" placeholder="Search with Domain name, name, phone" value="">
@@ -9,7 +9,7 @@
             </mat-form-field>
             {{isFilteredValue}}
         </div>
-        <div class="last-served">
+        <div class="col-4">
             <mat-card class="example-card" (dblclick)="profileView()">
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"> </div>
@@ -64,5 +64,4 @@
             </mat-card>
         </div>
     </div>
-
-</div>
+   </div>

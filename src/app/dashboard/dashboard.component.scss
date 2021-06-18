@@ -1,3 +1,6 @@
+.dashboard {
+  margin-top: 20px;
+}
 .example-full-width {
     width: 100%;
   }
@@ -8,20 +11,5 @@
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
-  }
-
-  .flex-container {
-    display: flex;
-    flex-wrap: nowrap;
-    .search-container {
-        width: 70%;
-        padding: 20px;
-        .mat-input-element {
-          padding-top: 5px;
-        }
-        }
-    .last-served {
-        width: 30%;
-    }
   }
   

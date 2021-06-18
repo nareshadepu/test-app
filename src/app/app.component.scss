@@ -268,5 +268,7 @@
 
    img {margin-top: 8px;
    }
-
-   
+   ::ng-deep .mat-form-field-prefix{
+    margin-right: 0.5em;
+ }
+ 

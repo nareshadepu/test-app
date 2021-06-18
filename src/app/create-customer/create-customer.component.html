@@ -1,19 +1,140 @@
-<div class="content">
-    <mat-card class="example-card">
+<div class="container">
+    <mat-card class="customer-card">
         <mat-card-header>
           <mat-card-title>
-            <mat-icon matPrefix>person_add</mat-icon>
               Create Customer
             </mat-card-title>
           </mat-card-header>
         <mat-card-content>
-            <div>
-                <mat-form-field appearance="fill">
-                    <mat-label>Enter your email</mat-label>
+          <div class="row">
+          
+            <div class="col-12">
+              <mat-form-field appearance="fill">
+                <mat-label>Domain Name</mat-label>
+                <mat-icon matPrefix>public</mat-icon>
+                <input matInput placeholder="pat@example.com" required>
+                
+              </mat-form-field>
+            </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>First Name</mat-label>
+                    <mat-icon matPrefix>badge</mat-icon>
                     <input matInput placeholder="pat@example.com" required>
                     
                   </mat-form-field>
-              </div>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Last Name</mat-label>
+                    <mat-icon matPrefix>badge</mat-icon>
+                    <input matInput placeholder="pat@example.com" required>
+                    
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <mat-icon matPrefix>email</mat-icon>
+                    <input matInput placeholder="pat@example.com" required>
+                    
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Nationality</mat-label>
+                    <mat-icon matPrefix>flag</mat-icon>
+                    <input matInput placeholder="pat@example.com" required>
+                    
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Mobile Number 
+                    </mat-label>
+                    <mat-icon matPrefix>smartphone</mat-icon>
+                    <input matInput placeholder="pat@example.com" required>
+                    
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Join Date</mat-label>
+                    <mat-icon matPrefix>date_range</mat-icon>
+                    <input matInput placeholder="pat@example.com" required>
+                    
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Domian</mat-label>
+                    <mat-icon matPrefix>language</mat-icon>
+                    <mat-select>
+                      <mat-option value="internal">Internal</mat-option>
+                      <mat-option value="extrnal">Extrnal</mat-option>
+                    </mat-select>
+                    
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Hosting</mat-label>
+                    <mat-icon matPrefix>view_list</mat-icon>
+                    <mat-select>
+                      <mat-option value="internal">Internal</mat-option>
+                      <mat-option value="extrnal">Extrnal</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                 <!-- <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <mat-icon matPrefix>email</mat-icon>
+                    <mat-select>
+                      <mat-option value="yes">Yes</mat-option>
+                      <mat-option value="No">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div> -->
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>SSL</mat-label>
+                    <mat-icon matPrefix>vpn_lock</mat-icon>
+                    <mat-select>
+                      <mat-option value="yes">Yes</mat-option>
+                      <mat-option value="No">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div> 
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Status</mat-label>
+                    <mat-icon matPrefix>notifications</mat-icon>
+                    <mat-select>
+                      <mat-option value="active">Active</mat-option>
+                      <mat-option value="deactive">Deactive</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Type</mat-label>
+                    <mat-icon matPrefix>border_color</mat-icon>
+                    <mat-select>
+                      <mat-option value="silver">Silver</mat-option>
+                      <mat-option value="gold">Gold</mat-option>
+                      <mat-option value="platinum">Platinum</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-12">
+                  <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <mat-icon matPrefix>contact_mail</mat-icon>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </div>  
+          </div>
         </mat-card-content>
         <mat-card-actions align="end">
           <button mat-button color="primary">
