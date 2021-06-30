@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, },
   { path: 'user', component: UserTableComponent, canActivate: [AuthGuard] },
-  { path: 'create-customer', component: CreateCustomerComponent, canActivate: [AuthGuard] }
+  { path: 'create-customer', component: CreateCustomerComponent }
 ];
 
 

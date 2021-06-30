@@ -16,6 +16,7 @@ import { CreateCustomerComponent } from './create-customer/create-customer.compo
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { AuthService } from './auth.service';
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
